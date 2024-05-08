@@ -11,18 +11,7 @@ Sockets Links.
  server .
 4. Send and receive the message using the send function in socket.
 ## PROGRAM
-### Server Side
-```
-import socket
-s=socket.socket()
-s.bind(('localhost',90))
-s.listen(5)
-c,addr=s.accept()
-while True:
- ClientMessage=c.recv(1024).decode()
- c.send(ClientMessage.encode())
-```
-### Client Side
+### CLIENT
 ```
 
 import socket
@@ -33,6 +22,18 @@ while True:
  s.send(msg.encode())
  print("Server > ",s.recv(1024).decode())
 ```
+### SERVER
+```
+import socket
+s=socket.socket()
+s.bind(('localhost',90))
+s.listen(5)
+c,addr=s.accept()
+while True:
+ ClientMessage=c.recv(1024).decode()
+ c.send(ClientMessage.encode())
+```
+
 ## OUPUT
 ### CLIENT:
 ![WhatsApp Image 2024-05-08 at 10 36 49_1bad6760](https://github.com/Saiguruchandran/3a.Sockets_Creation_for_Echo_Client_and_Echo_Server/assets/144870946/bdbc6916-dbf0-4d94-bb41-e87e5ce0db80)
